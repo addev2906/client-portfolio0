@@ -84,11 +84,9 @@ nav a:hover{
 nav a:hover::before{
     height: 30px;
 }
-span{
+.about-span,.exp-span,.blog-span,.video-span,.resume-span{
+    z-index: 2;
     display: flex;
     justify-content: center;
     align-items: center;
-}
-.about-span,.exp-span,.blog-span,.video-span,.resume-span{
-    z-index: 2;
 }
