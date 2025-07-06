@@ -1,0 +1,84 @@
+@property --black {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #3D3C42;
+}
+@property --purple {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #7F5283;
+}
+@property --blue {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #A6D1E6;
+}
+@property --white {
+  syntax: "<color>";
+  inherits: false;
+  initial-value: #FEFBF6;
+}
+
+/* .montserrat-<uniquifier> {
+  font-family: "Montserrat", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: <weight>;
+  font-style: normal;
+} */
+*{
+    margin: 0;
+    padding: 0;
+}
+html{
+    height: 120vh;
+    background-color: var(--black);
+}
+nav{
+    min-height: 30px;
+    position: fixed;
+    width: 100%;
+    text-align: center;
+    top: 0;
+    font-family: Montserrat;
+    color: var(--white);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* filter: blur(5px); */
+    transition: color 0.5s;
+}
+nav *{
+    width: calc(100vw/5);
+}
+nav a{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 30px;
+    position: relative;
+}
+nav a::after{
+    content: '';
+    position: absolute;
+    background-color: var(--white);
+    height: 20px;
+    width: 1px;
+    right: 0;
+}
+nav a::before{
+    z-index: -1;
+    content: '';
+    position: absolute;
+    background-color: var(--white);
+    height: 0px;
+    width: 100%;
+    bottom: 0;
+    transition: height 0.5s;
+}
+nav a:hover{
+    color: #3D3C42;
+}
+nav a:hover::before{
+    height: 30px;
+}
