@@ -22,12 +22,79 @@
     margin: 0;
     padding: 0;
 }
-html{
-    height: 120vh;
-    background-color: var(--black);
+html{   
+    font-family: Montserrat;
+    background-color: black;
+    /* background-image: linear-gradient(to bottom, var(--black),#484850); */
+    color: var(--white);
 }
 .spacer{
     height: 100vh;
+
+}
+.about-me-heading{
+    background-color: black;
+    
+    margin-top: 60px;
+    margin-left: 40px;
+    /* mask-image: url("assets/mask/mask-image.png");
+    mask-repeat: no-repeat;
+    mask-position: -400px 0; */
+    position: relative;
+    z-index: 0;
+}
+.about-me-heading h1 span{
+    position: relative;
+    z-index: 2;
+}
+.about-me-heading::before{
+    /* content: '';
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    width: 100px;
+    background-color: white;
+    mask-image: url("./assets/mask/mask-image.png");
+    mask-repeat: no-repeat;
+    mask-position: 0 0; */
+    content: "";
+  position: absolute;
+  inset: 0;
+  background-color: #BC13FE;
+  z-index: -1;
+
+  /* Mask from left (0%) to right (100%) */
+  mask-image: url("assets/mask/mask-image.png");
+  /* mask-size: 200% 100%; */
+  mask-position: -46% 0;
+  mask-repeat: no-repeat;
+  transition: mask-position 0.5s ease-in-out;
+}
+.about-me-heading:hover::before{
+    mask-position: 0 0;
+}
+.about-me-content{
+    /* display: inline-block; */
+    margin-left: 40px;
+    width: 40vw;
+    font-size: 20px;
+}
+.hero-image{
+    display: grid;
+    grid-template-rows: 1fr auto;
+    float: right;
+    margin-right: 20px;
+}
+.hero-image img{
+    border-radius: 1200px;
+    mask-image: linear-gradient(to bottom, #000,#0000);
+}
+.hero-description{
+    text-align: center;
+    /* margin-top: -5px;     */
 }
 nav{
     min-height: 30px;
@@ -44,7 +111,7 @@ nav{
     display: flex;
     align-items: center;
     justify-content: space-around;
-    background-color: rgb(0, 0, 0);
+    background-color: rgb(53, 53, 53);
     /* filter: blur(5px); */
     transition: color 0.5s;
     
@@ -53,6 +120,7 @@ nav *{
     width: calc(100vw/6);
 }
 nav a{
+    font-weight: bold;
     z-index: 3;
     display: flex;
     justify-content: space-around;
@@ -72,14 +140,14 @@ nav a::before{
     z-index: 1;
     content: '';
     position: absolute;
-    background-color: white;
+    background-color: #BC13FE;
     height: 0px;
     width: 100%;
     bottom: 0;
     transition: height 0.5s;
 }
 nav a:hover{
-    color: #36363b;
+    color: black;
 }
 nav a:hover::before{
     height: 30px;
@@ -89,4 +157,10 @@ nav a:hover::before{
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: color 0.5s;
+}
+.about-me-grid{
+    display: grid;
+    grid-template-columns: 1fr auto;
+    margin-top: 30px;
 }
