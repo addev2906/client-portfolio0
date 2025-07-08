@@ -60,7 +60,7 @@ html{
     content: "";
   position: absolute;
   inset: 0;
-  background-color: #BC13FE;
+  background-color: #0080FF;
   z-index: -1;
 
   /* Mask from left (0%) to right (100%) */
@@ -137,7 +137,7 @@ nav a::before{
     z-index: 1;
     content: '';
     position: absolute;
-    background-color: #BC13FE;
+    background-color: #0080FF;
     height: 0px;
     width: 100%;
     bottom: 0;
@@ -160,4 +160,71 @@ nav a:hover::before{
     display: grid;
     grid-template-columns: 1fr auto;
     margin-top: 30px;
+}
+.scroll-box{
+    padding-top: 100px;
+    padding-bottom: 300px;
+    display: grid;
+    grid-template-columns: 150px 350px 1fr 110px;
+    column-gap: 20px;
+}
+.scroll-box .exp-content{
+    height: 400px;
+    overflow-y: auto;
+    direction: rtl;             /* forces scrollbar to left */
+    text-align: left;           /* keeps text aligned normally */
+    scrollbar-gutter: stable both-edges;
+    padding-left: 10px;
+    font-size: larger;
+}
+.scroll-box .exp-content::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scroll-box .exp-content::-webkit-scrollbar-thumb {
+    background-color: #0080FF;
+    border-radius: 8px;
+}
+.company-grid{
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr;
+    row-gap: 80px;
+    height: fit-content;
+    justify-content: end;
+}
+.company-grid div{
+    padding: 10px;
+    text-align: center;
+    border-radius: 5px;
+    background-color: #004f9e;
+    position: relative;
+    z-index: 0;
+    transition: scale 0.2s;
+}
+
+.company-grid div::before{
+    position: absolute;
+    content: '';
+    background-color: #0080ff;
+    z-index: 1;
+    width: 10px;
+    height: 39px;
+    border-radius: 5px;
+    top:0;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    transition: width 0.3s ease-in-out;
+}
+.company-grid div:hover::before{
+    width: 106.61px;
+    scale: 1.1;
+}
+.company-grid div:hover{
+    scale: 1.1;
+}
+ .company-1,.company-2,.company-3{
+    z-index: 2;
+    position: relative;
+    
 }
