@@ -194,12 +194,14 @@ nav a:hover::before{
 }
 .company-grid div{
     padding: 10px;
+    /* width: auto+10px; */
     text-align: center;
     border-radius: 5px;
     background-color: #004f9e;
     position: relative;
     z-index: 0;
     transition: scale 0.2s;
+    pointer-events: auto; /* disables click on padding */
 }
 
 .company-grid div::before{
@@ -227,4 +229,13 @@ nav a:hover::before{
     z-index: 2;
     position: relative;
     
+}
+:root{
+    --video-scale:50px;
+}
+.video-container{
+    width: calc(var(--video-scale)*16);
+    height: calc(var(--video-scale)*9);
+    border-radius: 10px;
+    overflow: hidden;
 }
